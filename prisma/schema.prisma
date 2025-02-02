@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Member {
+  MemberID     Int      @id(map: "PK_Member") @default(autoincrement())
+  FirstName    String   @db.NVarChar(50)
+  LastName     String   @db.NVarChar(50)
+  NationalCode String?  @db.NVarChar(15)
+  Email        String?  @db.NVarChar(50)
+  Mobile       String?  @db.NVarChar(20)
+  GenderID     Int?
+  Username     String   @db.NVarChar(50)
+  Password     String   @db.NVarChar(300)
+  PicFileName  String?  @db.NVarChar(200)
+  RegDate      String?  @db.NVarChar(8)
+  RegTime      String?  @db.NVarChar(6)
+  RegMemberID  Int?
+  IsAdmin      Boolean?
+  IsExpert     Boolean?
+  IsActive     Boolean?
+}
