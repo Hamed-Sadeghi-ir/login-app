@@ -12,14 +12,14 @@ const DashboardPage = () => {
 
     const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        // اگر هنوز وضعیت session بارگذاری نشده است یا کاربر وارد نشده باشد
-        if (status === 'loading') return; // در حال بارگذاری
+    // useEffect(() => {
+    //     // اگر هنوز وضعیت session بارگذاری نشده است یا کاربر وارد نشده باشد
+    //     if (status === 'loading') return; // در حال بارگذاری
 
-        if (!session) {
-            router.push('/login'); // اگر کاربر لاگین نکرده باشد، به صفحه‌ی لاگین هدایت شود
-        }
-    }, [status, session, router]); // به تغییرات status و session وابسته است
+    //     if (!session) {
+    //         router.push('/login'); // اگر کاربر لاگین نکرده باشد، به صفحه‌ی لاگین هدایت شود
+    //     }
+    // }, [status, session, router]); // به تغییرات status و session وابسته است
 
     if (status === 'loading') return <div>Loading...</div>; // نمایش وضعیت بارگذاری
 
